@@ -45,6 +45,11 @@ class TemperatureViewModel : ViewModel() {
 
     private var job: Job? = null
 
+    init {
+        // Start generating data as soon as the ViewModel is created
+        start()
+    }
+
     fun togglePaused() {
         val newPaused = !_state.value.paused
         _state.value = _state.value.copy(paused = newPaused)
